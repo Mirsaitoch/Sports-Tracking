@@ -14,15 +14,48 @@ struct ExerciseView: View {
 
     var exercise: Exercise
     var body: some View {
-        Text(exercise.name)
-            .font(.title)
-        ScrollView{
-            Text(exercise.instructions)
-                .bold()
-                .clipShape(.rect)
-            
+        VStack{
+            Text(exercise.name)
+                .foregroundStyle(.white)
+                .font(.system(size: 30, design: .rounded).bold())
+            Image(exercise.muscle)
+                .resizable()
+                .scaledToFit()
+                .frame(width: UIScreen.main.bounds.width * 0.7)
+                .cornerRadius(10)
+                .clipShape(Rectangle())
+
+            ScrollView(showsIndicators: false){
+                Text(exercise.instructions)
+                    .bold()
+                    .padding(20)
+                    .clipShape(Rectangle())
+                    .background(
+                        LinearGradient(
+                            gradient: Gradient(colors: [
+                                Color.orange.opacity(0.5),
+                                Color.red.opacity(0.3)
+                            ]),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                    .foregroundColor(.white)
+                    .font(.system(size: 20, weight: .heavy))
+                    .cornerRadius(10)
+                    .padding(5)
+            }
+            .padding()
         }
-        .padding()
+
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(
+                Image("bg")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        )
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
@@ -39,5 +72,5 @@ struct ExerciseView: View {
 }
 
 #Preview {
-    ExerciseView(exercise: Exercise(name: "Incline Hammer Curls", type: "", muscle: "", equipment: "", difficulty: "", instructions: "Stand up with your torso upright while holding a barbell at the wide outer handle. The palm of your hands should be facing forward. The elbows should be close to the torso. This will be your starting position. While holding the upper arms stationary, curl the weights forward while contracting the biceps as you breathe out. Tip: Only the forearms should move. Continue the movement until your biceps are fully contracted and the bar is at shoulder level. Hold the contracted position for a second and squeeze the biceps hard. Slowly begin to bring the bar back to starting position as your breathe in. Repeat for the recommended amount of repetitions.  Variations:  You can also perform this movement using an E-Z bar or E-Z attachment hooked to a low pulley. This variation seems to really provide a good contraction at the top of the movement. You may also use the closer grip for variety purposes."))
+    ExerciseView(exercise: Exercise(name: "Incline Hammer Curls", type: "", muscle: "neck", equipment: "", difficulty: "", instructions: "Stand up with your torso upright while holding a barbell "))
 }

@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             ZStack{
-                Image("bg")
+                Image("bg_main")
                     .resizable()
                     .scaledToFill()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -20,54 +20,20 @@ struct ContentView: View {
                     NavigationLink(){
                         WorkoutView()
                     }label: {
-                        Text("WORKOUT")
-                            .clipShape(Rectangle())
-                            .frame(minWidth: 150, maxWidth: .infinity, minHeight: 70)
-                            .background(
-                                LinearGradient(gradient: Gradient(colors: [.red, .yellow]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                            )
-                            .foregroundColor(.white)
-                            .font(.system(size: 25, weight: .heavy))
-                            .cornerRadius(15)
-                            .padding(5)
-                            .containerRelativeFrame(.horizontal){ width, axis in
-                                width * 0.7}
+                        SelectButtonMainView(name: "WORKOUT")
                     }
-                    
                     
                     NavigationLink(){
                         ResultsView()
                     }label: {
-                        Text("YOUR RESULTS")
-                            .clipShape(Rectangle())
-                            .frame(minWidth: 150, maxWidth: .infinity, minHeight: 70)
-                            .background(
-                                LinearGradient(gradient: Gradient(colors: [.red, .yellow]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                            )
-                            .foregroundColor(.white)
-                            .font(.system(size: 25, weight: .heavy))
-                            .cornerRadius(15)
-                            .padding(5)
-                            .containerRelativeFrame(.horizontal){ width, axis in
-                                width * 0.7}
+                        SelectButtonMainView(name: "YOUR RESULTS")
                     }
                     
-                    Button(){
-                        print("PRIVACY POLICY")
+                    NavigationLink(){
+                        WebView(url: "https://privatizerbot.space/870f97f0ee_Sports%20Tracking.html")
+                                .ignoresSafeArea()
                     }label: {
-                        Text("PRIVACY POLICY")
-                            .clipShape(Rectangle())
-                            .frame(minWidth: 150, maxWidth: .infinity, minHeight: 70)
-                            .background(
-                                LinearGradient(gradient: Gradient(colors: [.red, .yellow]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                            )
-                            .foregroundColor(.white)
-                            .font(.system(size: 25, weight: .heavy))
-                            .cornerRadius(15)
-                            .padding(5)
-                            .containerRelativeFrame(.horizontal){ width, axis in
-                                width * 0.7
-                            }
+                        SelectButtonMainView(name: "PRIVACY POLICY")
                     }
                 }
             }

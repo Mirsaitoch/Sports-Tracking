@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct SelectButtonMainView: View {
+    var name: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(name)
+            .clipShape(Rectangle())
+            .frame(minWidth: 150, maxWidth: .infinity, minHeight: 70)
+            .background(
+                LinearGradient(gradient: Gradient(colors: [.red, .yellow]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            )
+            .foregroundColor(.white)
+            .font(.system(size: 25, weight: .heavy))
+            .cornerRadius(15)
+            .padding(5)
+            .containerRelativeFrame(.horizontal){ width, axis in
+                width * 0.7}  
     }
 }
 
 #Preview {
-    SelectButtonMainView()
+    SelectButtonMainView(name: "WORKOUT")
 }

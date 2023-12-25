@@ -15,13 +15,21 @@ struct WorkoutView: View {
     @State private var selectedMuscle = "biceps"
     
     var body: some View {
-        
         VStack{
             if showData{
                 ExercisesView(exercises: exercises)
+                    .padding(.horizontal, 20)
             }
             else{
+                ZStack {
+                    Image("bg")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .edgesIgnoringSafeArea(.all)
                 ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                }
             }
         }
         .onAppear(perform: {
@@ -34,7 +42,6 @@ struct WorkoutView: View {
                 }
             }
         })
-        
         .toolbar{
             Menu("Choose muscle", systemImage: "figure.walk") {
                 ForEach(viewModel.muscleGroups, id: \.self) { muscle in
@@ -44,6 +51,7 @@ struct WorkoutView: View {
                     }
                 }
             }
+            
             .onChange(of: selectedMuscle) {
                 showData = false
                 viewModel.getExercises(selectedMuscle: selectedMuscle) { (exercises, error) in
@@ -58,8 +66,6 @@ struct WorkoutView: View {
         }
     }
 }
-
-
 
 
 #Preview {
