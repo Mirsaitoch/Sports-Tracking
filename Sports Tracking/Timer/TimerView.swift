@@ -17,7 +17,8 @@ struct TimerView: View {
     @State private var audioPlayer: AVAudioPlayer?
     @State private var hourglassRotation: Double = 0
     @State private var buttonStartIsActive = true
-    
+    @State private var showCompliteAlert = false
+
     let secondsArray = [10, 30, 60, 90, 120, 180]
     
     var body: some View {
@@ -90,6 +91,19 @@ struct TimerView: View {
                 .edgesIgnoringSafeArea(.all)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         )
+        .alert(isPresented: $showCompliteAlert) {
+                Alert(
+                    title: Text("The exercise is completed 💪🏽"),
+                    message: Text("Keep it up! Save the completed exercise."),
+                    primaryButton: .default(
+                        Text("Save"),
+                        action: saveWorkoutData
+                    ),
+                    secondaryButton: .default(
+                        Text("Cancel")
+                    )
+                )
+            }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 if isRunning {
@@ -143,6 +157,7 @@ struct TimerView: View {
         audioPlayer?.stop()
     }
     private func compliteTimer() {
+        showCompliteAlert.toggle()
         hourglassRotation = 0
         timer?.invalidate()
         timeRemaining = timeRemainingConstant
@@ -180,6 +195,10 @@ struct TimerView: View {
         } else {
             audioPlayer?.stop()
         }
+    }
+    
+    private func saveWorkoutData(){
+        // TODO save time in SwiftData and connect with appleFitnes
     }
 }
 
