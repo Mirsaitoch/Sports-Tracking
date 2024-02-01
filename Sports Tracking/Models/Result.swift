@@ -9,7 +9,6 @@ import Foundation
 import SwiftData
 
 @Model
-
 class Result{
     var name: String
     var date: Date

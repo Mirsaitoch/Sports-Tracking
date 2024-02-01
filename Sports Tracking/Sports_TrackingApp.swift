@@ -12,7 +12,7 @@ struct Sports_TrackingApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
         }
         .modelContainer(for: Result.self)
     }

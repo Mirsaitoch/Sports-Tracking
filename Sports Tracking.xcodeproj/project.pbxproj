@@ -8,11 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		3B0121202B31E9A30006A492 /* ExercisesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B01211F2B31E9A30006A492 /* ExercisesView.swift */; };
-		3B0121232B31F0410006A492 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0121222B31F0410006A492 /* ExerciseViewModel.swift */; };
+		3B0121232B31F0410006A492 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0121222B31F0410006A492 /* WorkoutViewModel.swift */; };
 		3B0121292B32040C0006A492 /* SelectButtonMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0121282B32040C0006A492 /* SelectButtonMainView.swift */; };
+		3B57E5CC2B6BA80C007AA88D /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57E5CB2B6BA80C007AA88D /* TimerView.swift */; };
+		3B57E5CF2B6BAC0D007AA88D /* ExercisesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57E5CE2B6BAC0D007AA88D /* ExercisesViewModel.swift */; };
+		3B57E5D12B6BEBCE007AA88D /* View+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57E5D02B6BEBCE007AA88D /* View+Extentions.swift */; };
+		3B57E5D42B6BF211007AA88D /* ExerciseNameBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57E5D32B6BF211007AA88D /* ExerciseNameBackgroundModifier.swift */; };
+		3B57E5D72B6BF452007AA88D /* ExerciseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57E5D62B6BF452007AA88D /* ExerciseItemView.swift */; };
+		3B57E5D92B6BF521007AA88D /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3B57E5D82B6BF521007AA88D /* music.mp3 */; };
 		3B7713422B336F7A002C32C9 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7713412B336F7A002C32C9 /* ResultViewModel.swift */; };
-		3B7713442B337524002C32C9 /* Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7713432B337524002C32C9 /* Color-Theme.swift */; };
+		3B7713442B337524002C32C9 /* Color-Theme+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7713432B337524002C32C9 /* Color-Theme+Extention.swift */; };
 		3B7713472B3379FD002C32C9 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7713462B3379FD002C32C9 /* WebView.swift */; };
+		3BAB4CE72B39D9C60031CC19 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAB4CE62B39D9C60031CC19 /* StartView.swift */; };
+		3BAB4CE92B39F63A0031CC19 /* SizeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAB4CE82B39F63A0031CC19 /* SizeViewModel.swift */; };
 		3BC2F2852B2E2F2A0040C6F8 /* Sports_TrackingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2F2842B2E2F2A0040C6F8 /* Sports_TrackingApp.swift */; };
 		3BC2F2872B2E2F2A0040C6F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC2F2862B2E2F2A0040C6F8 /* ContentView.swift */; };
 		3BC2F2892B2E2F2B0040C6F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BC2F2882B2E2F2B0040C6F8 /* Assets.xcassets */; };
@@ -26,11 +34,19 @@
 
 /* Begin PBXFileReference section */
 		3B01211F2B31E9A30006A492 /* ExercisesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesView.swift; sourceTree = "<group>"; };
-		3B0121222B31F0410006A492 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
+		3B0121222B31F0410006A492 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
 		3B0121282B32040C0006A492 /* SelectButtonMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButtonMainView.swift; sourceTree = "<group>"; };
+		3B57E5CB2B6BA80C007AA88D /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		3B57E5CE2B6BAC0D007AA88D /* ExercisesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesViewModel.swift; sourceTree = "<group>"; };
+		3B57E5D02B6BEBCE007AA88D /* View+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extentions.swift"; sourceTree = "<group>"; };
+		3B57E5D32B6BF211007AA88D /* ExerciseNameBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseNameBackgroundModifier.swift; sourceTree = "<group>"; };
+		3B57E5D62B6BF452007AA88D /* ExerciseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItemView.swift; sourceTree = "<group>"; };
+		3B57E5D82B6BF521007AA88D /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		3B7713412B336F7A002C32C9 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
-		3B7713432B337524002C32C9 /* Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme.swift"; sourceTree = "<group>"; };
+		3B7713432B337524002C32C9 /* Color-Theme+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme+Extention.swift"; sourceTree = "<group>"; };
 		3B7713462B3379FD002C32C9 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		3BAB4CE62B39D9C60031CC19 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		3BAB4CE82B39F63A0031CC19 /* SizeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeViewModel.swift; sourceTree = "<group>"; };
 		3BC2F2812B2E2F2A0040C6F8 /* Sports Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sports Tracking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC2F2842B2E2F2A0040C6F8 /* Sports_TrackingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sports_TrackingApp.swift; sourceTree = "<group>"; };
 		3BC2F2862B2E2F2A0040C6F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,32 +80,54 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		3B0121242B31F2260006A492 /* Main */ = {
+		3B0121242B31F2260006A492 /* MainViews */ = {
 			isa = PBXGroup;
 			children = (
-				3B7713462B3379FD002C32C9 /* WebView.swift */,
+				3BAB4CE62B39D9C60031CC19 /* StartView.swift */,
 				3BC2F2862B2E2F2A0040C6F8 /* ContentView.swift */,
-				3B0121282B32040C0006A492 /* SelectButtonMainView.swift */,
+				3B7713462B3379FD002C32C9 /* WebView.swift */,
 			);
-			path = Main;
+			path = MainViews;
 			sourceTree = "<group>";
 		};
-		3B0121252B31F2440006A492 /* Exercise */ = {
+		3B0121252B31F2440006A492 /* ExerciseViews */ = {
 			isa = PBXGroup;
 			children = (
 				3BC2F2932B2E346A0040C6F8 /* WorkoutView.swift */,
-				3B01211F2B31E9A30006A492 /* ExercisesView.swift */,
 				3BC2F2972B2E41FE0040C6F8 /* ExerciseView.swift */,
-				3B0121222B31F0410006A492 /* ExerciseViewModel.swift */,
 			);
-			path = Exercise;
+			path = ExerciseViews;
+			sourceTree = "<group>";
+		};
+		3B57E5CD2B6BA834007AA88D /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				3B57E5CB2B6BA80C007AA88D /* TimerView.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		3B57E5D22B6BF1DC007AA88D /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				3B57E5D02B6BEBCE007AA88D /* View+Extentions.swift */,
+				3B7713432B337524002C32C9 /* Color-Theme+Extention.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		3B57E5D52B6BF21A007AA88D /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				3B57E5D32B6BF211007AA88D /* ExerciseNameBackgroundModifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		3B7713402B336F43002C32C9 /* Result */ = {
 			isa = PBXGroup;
 			children = (
 				3BC2F29B2B2E43BD0040C6F8 /* ResultsView.swift */,
-				3B7713412B336F7A002C32C9 /* ResultViewModel.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -97,9 +135,22 @@
 		3B7713452B337949002C32C9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				3B7713432B337524002C32C9 /* Color-Theme.swift */,
+				3B01211F2B31E9A30006A492 /* ExercisesView.swift */,
+				3B57E5D62B6BF452007AA88D /* ExerciseItemView.swift */,
+				3B0121282B32040C0006A492 /* SelectButtonMainView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		3BAB4CEA2B39F8340031CC19 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3B7713412B336F7A002C32C9 /* ResultViewModel.swift */,
+				3BAB4CE82B39F63A0031CC19 /* SizeViewModel.swift */,
+				3B0121222B31F0410006A492 /* WorkoutViewModel.swift */,
+				3B57E5CE2B6BAC0D007AA88D /* ExercisesViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		3BC2F2782B2E2F2A0040C6F8 = {
@@ -122,14 +173,19 @@
 			isa = PBXGroup;
 			children = (
 				3BC2F2842B2E2F2A0040C6F8 /* Sports_TrackingApp.swift */,
-				3B0121252B31F2440006A492 /* Exercise */,
-				3B0121242B31F2260006A492 /* Main */,
+				3B0121242B31F2260006A492 /* MainViews */,
+				3B0121252B31F2440006A492 /* ExerciseViews */,
+				3B57E5CD2B6BA834007AA88D /* Timer */,
 				3B7713402B336F43002C32C9 /* Result */,
+				3BAB4CEA2B39F8340031CC19 /* ViewModels */,
 				3B7713452B337949002C32C9 /* Components */,
+				3B57E5D22B6BF1DC007AA88D /* Extentions */,
+				3B57E5D52B6BF21A007AA88D /* Modifiers */,
 				3B0121212B31EC7B0006A492 /* Models */,
 				3BC2F28B2B2E2F2B0040C6F8 /* Preview Content */,
 				3BC2F28A2B2E2F2B0040C6F8 /* Sports_Tracking.entitlements */,
 				3BC2F2882B2E2F2B0040C6F8 /* Assets.xcassets */,
+				3B57E5D82B6BF521007AA88D /* music.mp3 */,
 			);
 			path = "Sports Tracking";
 			sourceTree = "<group>";
@@ -202,6 +258,7 @@
 			files = (
 				3BC2F28D2B2E2F2B0040C6F8 /* Preview Assets.xcassets in Resources */,
 				3BC2F2892B2E2F2B0040C6F8 /* Assets.xcassets in Resources */,
+				3B57E5D92B6BF521007AA88D /* music.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,18 +270,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BC2F29A2B2E43A60040C6F8 /* Result.swift in Sources */,
+				3BAB4CE92B39F63A0031CC19 /* SizeViewModel.swift in Sources */,
 				3BC2F2872B2E2F2A0040C6F8 /* ContentView.swift in Sources */,
 				3B7713472B3379FD002C32C9 /* WebView.swift in Sources */,
 				3BC2F2962B2E39440040C6F8 /* Exercise.swift in Sources */,
 				3B7713422B336F7A002C32C9 /* ResultViewModel.swift in Sources */,
-				3B0121232B31F0410006A492 /* ExerciseViewModel.swift in Sources */,
+				3B57E5CC2B6BA80C007AA88D /* TimerView.swift in Sources */,
+				3B57E5D42B6BF211007AA88D /* ExerciseNameBackgroundModifier.swift in Sources */,
+				3B0121232B31F0410006A492 /* WorkoutViewModel.swift in Sources */,
+				3B57E5D12B6BEBCE007AA88D /* View+Extentions.swift in Sources */,
 				3BC2F2942B2E346A0040C6F8 /* WorkoutView.swift in Sources */,
 				3B0121202B31E9A30006A492 /* ExercisesView.swift in Sources */,
-				3B7713442B337524002C32C9 /* Color-Theme.swift in Sources */,
+				3B57E5CF2B6BAC0D007AA88D /* ExercisesViewModel.swift in Sources */,
+				3B7713442B337524002C32C9 /* Color-Theme+Extention.swift in Sources */,
 				3B0121292B32040C0006A492 /* SelectButtonMainView.swift in Sources */,
 				3BC2F29C2B2E43BD0040C6F8 /* ResultsView.swift in Sources */,
 				3BC2F2852B2E2F2A0040C6F8 /* Sports_TrackingApp.swift in Sources */,
 				3BC2F2982B2E41FE0040C6F8 /* ExerciseView.swift in Sources */,
+				3BAB4CE72B39D9C60031CC19 /* StartView.swift in Sources */,
+				3B57E5D72B6BF452007AA88D /* ExerciseItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +422,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Vai De Bob";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -396,6 +461,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Vai De Bob";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

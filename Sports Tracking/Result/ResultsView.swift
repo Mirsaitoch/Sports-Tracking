@@ -48,12 +48,9 @@ struct ResultsView: View {
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-
         )
     }
 }
-
-
 
 #Preview {
     ResultsView()

@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Exercise: Codable {
+class Exercise: Codable, Hashable{
     var name: String
     var type: String
     var muscle: String
@@ -24,4 +24,12 @@ class Exercise: Codable {
         self.difficulty = difficulty
         self.instructions = instructions
     }
+    
+    func hash(into hasher: inout Hasher) {
+            hasher.combine(name)
+        }
+        
+        static func == (lhs: Exercise, rhs: Exercise) -> Bool {
+            return lhs.name == rhs.name
+        }
 }
