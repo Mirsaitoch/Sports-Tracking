@@ -84,6 +84,7 @@ struct TimerView: View {
                     Text("\(time)")
                 }
             }
+            .disabled(isRunning)
             .foregroundStyle(.white)
             .pickerStyle(.segmented)
             .onChange(of: timeRemainingConstant) {
@@ -107,12 +108,12 @@ struct TimerView: View {
             Alert(
                 title: Text("The exercise is completed 💪🏽"),
                 message: Text("Keep it up! Save the completed exercise."),
-                primaryButton: .default(
+                primaryButton: .destructive(
+                    Text("Cancel")
+                ),
+                secondaryButton: .cancel(
                     Text("Save"),
                     action: saveExercise
-                ),
-                secondaryButton: .default(
-                    Text("Cancel")
                 )
             )
         }

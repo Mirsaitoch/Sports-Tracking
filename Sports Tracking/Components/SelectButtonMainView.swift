@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectButtonMainView: View {
     @StateObject var size = SizeViewModel()
-
+    
     var name: String
     var body: some View {
         Text(name)

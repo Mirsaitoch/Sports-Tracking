@@ -13,7 +13,7 @@ struct ResultsView: View {
     @StateObject var resultViewModel = ResultViewModel()
     
     @Environment(\.modelContext) var modelContext
-    @Query var results: [Result]
+    @Query(sort: \Result.date, order: .reverse) var results: [Result]
     
     var body: some View {
         VStack{
@@ -26,11 +26,13 @@ struct ResultsView: View {
                             Image(systemName: "\(index + 1).circle")
                                 .fontWeight(.bold)
                                 .foregroundStyle(.white)
+                                .padding([.trailing])
                             VStack{
                                 Text(result.name)
                                 Text(resultViewModel.formattedDate(result.date))
                             }
                             .foregroundColor(.white)
+                            Spacer()
                         }
                         .frame(width: UIScreen.main.bounds.width * 0.7)
                         .background(.ultraThinMaterial)
