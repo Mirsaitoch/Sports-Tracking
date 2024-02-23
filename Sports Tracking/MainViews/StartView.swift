@@ -9,16 +9,18 @@ import SwiftUI
 
 struct StartView: View {
     
+    @AppStorage("showPrivatePolicy") var showPrivatePolicy: Bool = true
+    
     var body: some View {
-        NavigationStack{
             VStack {
                 WebView(url: "https://privatizerbot.space/21561373f2_Vai%20De%20Bob.html")
-                    NavigationLink{
-                        ContentView()
-                    }label: {
-                        SelectButtonMainView(name: "CONFIRM")
+                
+                Button {
+                    showPrivatePolicy.toggle()
+                    print("pizda")
+                } label: {
+                    SelectButtonMainView(name: "CONFIRM")
                 }
-            }
         }
     }
 }

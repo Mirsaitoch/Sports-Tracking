@@ -9,10 +9,16 @@ import SwiftUI
 import SwiftData
 @main
 struct Sports_TrackingApp: App {
-    
+    @AppStorage("showPrivatePolicy") var showPrivatePolicy = true
+
     var body: some Scene {
         WindowGroup {
-            StartView()
+            if showPrivatePolicy {
+                StartView()
+            }
+            else {
+                ContentView()
+            }
         }
         .modelContainer(for: Result.self)
     }

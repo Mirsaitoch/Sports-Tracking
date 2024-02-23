@@ -26,10 +26,10 @@ class Exercise: Codable, Hashable{
     }
     
     func hash(into hasher: inout Hasher) {
-            hasher.combine(name)
-        }
-        
-        static func == (lhs: Exercise, rhs: Exercise) -> Bool {
-            return lhs.name == rhs.name
-        }
+        hasher.combine(name)
+    }
+    
+    static func == (lhs: Exercise, rhs: Exercise) -> Bool {
+        return lhs.name == rhs.name
+    }
 }

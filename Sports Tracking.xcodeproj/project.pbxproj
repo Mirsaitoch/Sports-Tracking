@@ -16,6 +16,7 @@
 		3B57E5D42B6BF211007AA88D /* ExerciseNameBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57E5D32B6BF211007AA88D /* ExerciseNameBackgroundModifier.swift */; };
 		3B57E5D72B6BF452007AA88D /* ExerciseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B57E5D62B6BF452007AA88D /* ExerciseItemView.swift */; };
 		3B57E5D92B6BF521007AA88D /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3B57E5D82B6BF521007AA88D /* music.mp3 */; };
+		3B6470452B88B5C300DF4D5B /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6470442B88B5C300DF4D5B /* HealthStore.swift */; };
 		3B7713422B336F7A002C32C9 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7713412B336F7A002C32C9 /* ResultViewModel.swift */; };
 		3B7713442B337524002C32C9 /* Color-Theme+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7713432B337524002C32C9 /* Color-Theme+Extention.swift */; };
 		3B7713472B3379FD002C32C9 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7713462B3379FD002C32C9 /* WebView.swift */; };
@@ -42,6 +43,7 @@
 		3B57E5D32B6BF211007AA88D /* ExerciseNameBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseNameBackgroundModifier.swift; sourceTree = "<group>"; };
 		3B57E5D62B6BF452007AA88D /* ExerciseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItemView.swift; sourceTree = "<group>"; };
 		3B57E5D82B6BF521007AA88D /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
+		3B6470442B88B5C300DF4D5B /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		3B7713412B336F7A002C32C9 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		3B7713432B337524002C32C9 /* Color-Theme+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme+Extention.swift"; sourceTree = "<group>"; };
 		3B7713462B3379FD002C32C9 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		3BC2F2782B2E2F2A0040C6F8 = {
 			isa = PBXGroup;
 			children = (
+				3B6470442B88B5C300DF4D5B /* HealthStore.swift */,
 				3BC2F2832B2E2F2A0040C6F8 /* Sports Tracking */,
 				3BC2F2822B2E2F2A0040C6F8 /* Products */,
 			);
@@ -282,6 +285,7 @@
 				3BC2F2942B2E346A0040C6F8 /* WorkoutView.swift in Sources */,
 				3B0121202B31E9A30006A492 /* ExercisesView.swift in Sources */,
 				3B57E5CF2B6BAC0D007AA88D /* ExercisesViewModel.swift in Sources */,
+				3B6470452B88B5C300DF4D5B /* HealthStore.swift in Sources */,
 				3B7713442B337524002C32C9 /* Color-Theme+Extention.swift in Sources */,
 				3B0121292B32040C0006A492 /* SelectButtonMainView.swift in Sources */,
 				3BC2F29C2B2E43BD0040C6F8 /* ResultsView.swift in Sources */,
@@ -423,6 +427,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Vai De Bob";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please give access to the recording of your workouts";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please give access to the recording of your workouts";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -441,7 +447,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mirsait.sabirzyanov.Sports-Tracking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -462,6 +469,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Vai De Bob";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please give access to the recording of your workouts";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Please give access to the recording of your workouts";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -480,7 +489,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mirsait.sabirzyanov.Sports-Tracking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

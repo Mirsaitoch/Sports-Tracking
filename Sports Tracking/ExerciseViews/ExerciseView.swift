@@ -12,7 +12,7 @@ struct ExerciseView: View {
     @Environment(\.modelContext) var modelContext
     @State private var isButtonActive = false
 
-    var exercise: Exercise
+    @State var exercise: Exercise
     
     var body: some View {
         VStack{
@@ -33,7 +33,7 @@ struct ExerciseView: View {
             .padding()
             
             NavigationLink {
-                TimerView()
+                TimerView(exercise: exercise)
             } label: {
                 Text("LET'S DO IT!")
                     .exerciseInstructionStyle()
@@ -47,18 +47,6 @@ struct ExerciseView: View {
                     .edgesIgnoringSafeArea(.all)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         )
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    modelContext.insert(Result(name: exercise.name, date: .now, type: exercise.type, muscle: exercise.muscle, difficulty: exercise.difficulty))
-                    isButtonActive = true
-                } label: {
-                    Image(systemName: isButtonActive ? "checkmark.square" : "checkmark.square")
-                        .foregroundColor(isButtonActive ? .gray : .green)
-                }
-                .disabled(isButtonActive)
-            }
-        }
     }
 }
 

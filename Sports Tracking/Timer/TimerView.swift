@@ -5,8 +5,10 @@
 //  Created by Мирсаит Сабирзянов on 01.02.2024.
 //
 
+import SwiftData
 import SwiftUI
 import AVFoundation
+import HealthKit
 
 struct TimerView: View {
     @State private var timeRemaining = 60
@@ -18,8 +20,17 @@ struct TimerView: View {
     @State private var hourglassRotation: Double = 0
     @State private var buttonStartIsActive = true
     @State private var showCompliteAlert = false
-
+    
+    @Environment(\.modelContext) var modelContext
+    @Environment(\.dismiss) var dismiss
+    @StateObject private var healthStore = HealthStore()
+    
+    @State var exercise: Exercise
+    
     let secondsArray = [10, 30, 60, 90, 120, 180]
+    
+    @State private var startDate: Date = .now
+    @State private var endDate: Date = .now
     
     var body: some View {
         VStack(alignment: .center) {
@@ -54,6 +65,7 @@ struct TimerView: View {
                 Button {
                     isRunning.toggle()
                     if isRunning {
+                        startDate = .now
                         startTimer()
                         startHourglassAnimation()
                     } else {
@@ -92,20 +104,27 @@ struct TimerView: View {
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         )
         .alert(isPresented: $showCompliteAlert) {
-                Alert(
-                    title: Text("The exercise is completed 💪🏽"),
-                    message: Text("Keep it up! Save the completed exercise."),
-                    primaryButton: .default(
-                        Text("Save"),
-                        action: saveWorkoutData
-                    ),
-                    secondaryButton: .default(
-                        Text("Cancel")
-                    )
+            Alert(
+                title: Text("The exercise is completed 💪🏽"),
+                message: Text("Keep it up! Save the completed exercise."),
+                primaryButton: .default(
+                    Text("Save"),
+                    action: saveExercise
+                ),
+                secondaryButton: .default(
+                    Text("Cancel")
                 )
+            )
+        }
+        .onAppear {
+            healthStore.requestAuthorization { success in
+                if success {
+                    print("Success")
+                }
             }
+        }
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
+            ToolbarItem(placement: .topBarTrailing) {
                 if isRunning {
                     Button {
                         isSound.toggle()
@@ -121,7 +140,23 @@ struct TimerView: View {
                         .frame(width: 20, height: 20)
                 }
             }
+            
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    saveExercise()
+                } label: {
+                    Image(systemName: "checkmark")
+                }
+            }
         }
+    }
+    
+    func saveExercise() {
+        //save in SwiftData
+        modelContext.insert(Result(name: exercise.name, date: .now, type: exercise.type, muscle: exercise.muscle, difficulty: exercise.difficulty, executionTime: TimeInterval(timeRemainingConstant)))
+        //save in Apple health
+        healthStore.saveWorkout(activityType: .functionalStrengthTraining, start: startDate, end: endDate)
+        dismiss()
     }
     
     func formattedTime() -> String {
@@ -129,6 +164,7 @@ struct TimerView: View {
         let second = Int(timeRemaining) % 60
         return String(format: "%02d:%02d", minutes, second)
     }
+    
     private func startHourglassAnimation() {
         if isRunning {
             withAnimation(.linear(duration: 1)) {
@@ -162,6 +198,7 @@ struct TimerView: View {
         timer?.invalidate()
         timeRemaining = timeRemainingConstant
         isRunning = false
+        endDate = .now
         audioPlayer?.stop()
     }
     private func playAudio(shouldPlay: Bool) {
@@ -197,11 +234,11 @@ struct TimerView: View {
         }
     }
     
-    private func saveWorkoutData(){
-        // TODO save time in SwiftData and connect with appleFitnes
-    }
 }
 
 #Preview {
-    TimerView()
+
+    let example = Exercise(name: "Jump", type: "Legs", muscle: "Legs", equipment: "...", difficulty: "...", instructions: "...")
+        
+    return TimerView(exercise: example)
 }

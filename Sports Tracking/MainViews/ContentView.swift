@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        NavigationStack{
             ZStack{
                 Image("bg_main")
                     .resizable()
@@ -16,27 +17,31 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .edgesIgnoringSafeArea(.all)
                 VStack {
-                    NavigationLink(){
+                    NavigationLink() {
                         WorkoutView()
-                    }label: {
+                    } label: {
                         SelectButtonMainView(name: "WORKOUT")
                     }
                     
-                    NavigationLink(){
+                    NavigationLink() {
                         ResultsView()
-                    }label: {
+                    } label: {
                         SelectButtonMainView(name: "YOUR RESULTS")
                     }
                     
-                    NavigationLink(){
+                    NavigationLink() {
                         WebView(url: "https://privatizerbot.space/870f97f0ee_Sports%20Tracking.html")
-                                .ignoresSafeArea()
-                    }label: {
+                            .ignoresSafeArea()
+                    } label: {
                         SelectButtonMainView(name: "PRIVACY POLICY")
+                    }
+                    .onTapGesture {
+                        print("erub")
                     }
                 }
             }
             .navigationBarBackButtonHidden()
+        }
     }
 }
 

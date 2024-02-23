@@ -15,13 +15,15 @@ class Result{
     var type: String
     var muscle: String
     var difficulty: String
+    var executionTime: TimeInterval
     
-    init(name: String, date: Date, type: String, muscle: String, difficulty: String) {
+    init(name: String, date: Date, type: String, muscle: String, difficulty: String, executionTime: TimeInterval) {
         self.name = name
         self.date = date
         self.type = type
         self.muscle = muscle
         self.difficulty = difficulty
+        self.executionTime = executionTime
     }
     
 }
